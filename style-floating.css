@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+.ak-BtnFloating, .ak-BtnFloating * {
+  box-sizing: border-box;
+}
+
+.ak-BtnFloating {
+  font-family: 'Roboto';
+  font-size: 16px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  margin-left: 20px;
+  z-index: 10;
+}
+.ak-BtnFloating-btn {
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  padding: calc(60px * 0.2);
+  background-color: #2DB742;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ak-BtnFloating-btn > svg {
+  position: absolute;
+  color: white;
+  width: 25px;
+  transition: all 0.2s ease 0s, opacity 300ms ease 0s, -webkit-transform 300ms ease 0s;
+  transition: all 0.2s ease 0s, opacity 300ms ease 0s, transform 300ms ease 0s;
+  transition: all 0.2s ease 0s, opacity 300ms ease 0s, transform 300ms ease 0s, -webkit-transform 300ms ease 0s;
+}
+.ak-BtnFloating-btn > svg:first-child {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  opacity: 1;
+}
+.ak-BtnFloating-btn > svg:last-child {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  width: 20px;
+  opacity: 0;
+}
+.ak-BtnFloating-btn:hover, .ak-BtnFloating-btn:focus {
+  cursor: pointer;
+}
+.ak-BtnFloating-content {
+  opacity: 0;
+  z-index: -1;
+  border-radius: 10px;
+  background: #FAFAFA;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  overflow: hidden;
+  width: 300px;
+  margin-left: 20px;
+  right: calc(20px + calc(60px / 2));
+  bottom: calc(20px + calc(60px / 2));
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  transition: all 0.2s ease 0s, opacity 300ms ease 0s, -webkit-transform 300ms ease 0s;
+  transition: all 0.2s ease 0s, opacity 300ms ease 0s, transform 300ms ease 0s;
+  transition: all 0.2s ease 0s, opacity 300ms ease 0s, transform 300ms ease 0s, -webkit-transform 300ms ease 0s;
+  pointer-events: none;
+}
+.ak-BtnFloating-title {
+  background-color: #2DB742;
+  padding: 20px;
+  color: white;
+  font-size: 1.2em;
+}
+.ak-BtnFloating-title > svg {
+  float: left;
+  width: 34px;
+  margin-right: 15px;
+}
+.ak-BtnFloating-title > span {
+  font-size: .6em;
+  line-height: 1.6em;
+  letter-spacing: 1px;
+  display: block;
+}
+.ak-BtnFloating-body {
+  padding: 0 20px;
+}
+.ak-BtnFloating-item {
+  padding: 20px 0;
+  display: block;
+  border-bottom: 1px dashed #DDD;
+  text-decoration: none;
+}
+.ak-BtnFloating-item:last-child {
+  border-bottom: 0;
+}
+.ak-BtnFloating-itemTitle {
+  font-size: 1em;
+  color: #444;
+  line-height: 1.6em;
+}
+.ak-BtnFloating-item:hover .ak-BtnFloating-itemTitle {
+  color: #2DB742;
+}
+.ak-BtnFloating-itemDescription {
+  font-size: .8em;
+  color: #AAA;
+}
+.ak-BtnFloating-chk {
+  display: none;
+}
+.ak-BtnFloating-chk:checked ~ label > .ak-BtnFloating-btn > svg:first-child {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  opacity: 0;
+}
+.ak-BtnFloating-chk:checked ~ label > .ak-BtnFloating-btn > svg:last-child {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  opacity: 1;
+}
+.ak-BtnFloating-chk:checked ~ .ak-BtnFloating-content {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  pointer-events: auto;
+}
